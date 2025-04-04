@@ -11,6 +11,7 @@ import java.util.Set;
 
 public class FrontdoorUserIdentity implements SecurityIdentity {
 
+  // can come from cache
   Map<String, Set<Permission>> rolePermissions = Map.of("Apptio Admin",
       Set.of(new StringPermission("read"), new StringPermission("write")),
       "Apptio User",

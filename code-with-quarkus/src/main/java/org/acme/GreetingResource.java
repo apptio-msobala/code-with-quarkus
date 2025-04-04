@@ -14,7 +14,7 @@ public class GreetingResource {
     @GET
     @Path("/write")
     @Produces(MediaType.TEXT_PLAIN)
-    @PermissionsAllowed("write")
+    @PermissionsAllowed("write") // also possible to use @RolesAllowed
     public String write() {
         return "Write from Quarkus REST";
     }

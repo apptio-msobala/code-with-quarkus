@@ -18,6 +18,7 @@ public class FrontdoorIdentityProvider implements IdentityProvider<OpenTokenAuth
   public Uni<SecurityIdentity> authenticate(
       OpenTokenAuthenticationRequest openTokenAuthenticationRequest,
       AuthenticationRequestContext authenticationRequestContext) {
+    // here the FrontdoorClient would be called and user Finger would be mapped to a SecurityIdentity
     return Uni.createFrom().item(new FrontdoorUserIdentity());
   }
 }

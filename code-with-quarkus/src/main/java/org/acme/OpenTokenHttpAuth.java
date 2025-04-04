@@ -37,7 +37,7 @@ public class OpenTokenHttpAuth implements HttpAuthenticationMechanism {
   public Uni<SecurityIdentity> authenticate(RoutingContext context,
       IdentityProviderManager identityProviderManager) {
     var opentoken = context.request().headers().get(APPTIO_OPENTOKEN);
-    var environmentId = context.request().headers().get(APPTIO_ENVIRONMENT);
+    var environmentId = context.request().headers().get(APPTIO_ENVIRONMENT); // should be optional for service to service calls
     if (opentoken == null || environmentId == null) {
       return Uni.createFrom().failure(new AuthenticationFailedException());
     }
